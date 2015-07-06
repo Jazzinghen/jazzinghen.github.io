@@ -17,5 +17,9 @@ plugins/switcher.php
 cache/*.png
 cache/*.jpeg
 
+# Jekyll files
 Gemfile.lock
 _site/
+
+# WebStorm files
+.idea/

@@ -35,13 +35,13 @@ window.onload = function init () {
     // Link shader variables to buffers/other variables
 
     var vPosition = gl.getAttribLocation(gl_Program, "vPosition");
-    gl.vertexAttribPointer(vPosition, 2, gl.FLOAT, 0, 0);
+    gl.vertexAttribPointer(vPosition, 2, gl.FLOAT, false, 0, 0);
     gl.enableVertexAttribArray(vPosition);
 
     render();
 };
 
 function render(){
-    gl.clar(gl.COLOR_BUFFER_BIT);
+    gl.clear(gl.COLOR_BUFFER_BIT);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
 }

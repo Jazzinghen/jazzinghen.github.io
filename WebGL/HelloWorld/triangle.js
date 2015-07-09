@@ -17,7 +17,7 @@ window.onload = function init () {
     // Configure WebGL context
 
     gl.viewport = (0, 0, canvas.width, canvas.height);
-    gl.clearColor = (0.4, 0.4, 0.4, 1.0);
+    gl.clearColor(0.4, 0.4, 0.4, 1.0);
 
     // Initialise shaders and attach them to the GL context
 
@@ -37,6 +37,9 @@ window.onload = function init () {
     var vPosition = gl.getAttribLocation(gl_Program, "vPosition");
     gl.vertexAttribPointer(vPosition, 2, gl.FLOAT, false, 0, 0);
     gl.enableVertexAttribArray(vPosition);
+
+    var canvasSize = gl.getUniformLocation(gl_Program, "canvasSize");
+    gl.uniform2f(canvasSize, 512.0, 512.0);
 
     render();
 };
